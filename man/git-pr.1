@@ -1,0 +1,67 @@
+.\" Manpage for git-pr.
+
+.TH "GIT-PR" "1" "2015-10-12" "" "Git Manual"
+
+.SH "NAME"
+git-pr \- fetch GitHub's pull requests to local copy
+
+
+.SH SYNOPSIS
+\fBgit pr\fR [\fIrepository\fR] \fIpull_request\fR [\fB\-b\fR \fIbranch\fR]
+
+
+.SH DESCRIPTION
+Fetches a pull request from a remote GitHub repository, and checkouts to
+fetched commits when it's done.
+
+By default, a pull request is unattached and the only reference is stored
+in \fBFETCH_HEAD\fR. In order to fetch a pull request into separate branch,
+the \fB\-b\fR or \fB\-\-branch\fR argument must be passed.
+
+
+.SH OPTIONS
+
+.TP
+.B repository
+The "remote" repository that is the source of a pull request. This parameter
+can be either a URL or the name of a remote, but in any case it must points
+to GitHub repo. If parameter isn't passed, "origin" is assumed.
+
+.TP
+.B pull_request
+A pull request ID to be fetched.
+
+.TP
+.B \-b, \-\-branch \fIname\fR
+If passed, a pull request will be fetched into a new branch with a given
+\fIname\fR.
+
+
+.SH BUGS
+Bug reports can be submitted to <https://github.com/ikalnitsky/git\-pr/issues>
+
+
+.SH EXAMPLE
+For the following <https://github.com/ikalnitsky/git-pr/pull/42> pull
+request possible use cases might look like:
+
+.TP
+.B git pr 42
+Fetch pull request with ID=42 from \fBorigin\fR remote.
+
+.TP
+.B git pr github 42
+Fetch pull request with ID=42 from \fBgithub\fR remote.
+
+.TP
+.B git pr 42 \-\-branch pr/42
+Fetch pull reqest with ID=42 from \fBorigin\fR remote to the \fBpr/42\fR
+local branch.
+
+
+.SH AUTHORS
+Igor Kalnitsky <igor@kalnitsky.org>
+
+
+.SH SEE ALSO
+git-checkout(1), git-fetch(1), git-pull(1)

@@ -1,0 +1,29 @@
+========
+ git-pr
+========
+
+A git command for fetching GitHub's pull requests to local copy.
+
+.. code:: bash
+
+    $ [sudo] pip install git-pr
+
+Usage
+-----
+
+https://github.com/ikalnitsky/git-pr/pull/42
+
+.. code:: bash
+
+    $ git pr 42
+    $ git pr github 42
+    $ git pr 42 --branch pr/42
+    $ git pr https://github.com/ikalnitsky/git-pr.git 42
+
+
+Links
+-----
+
+* Documentation: https://git-pr.readthedocs.org/
+* Source: https://github.com/ikalnitsky/git-pr
+* Bugs: https://github.com/ikalnitsky/git-pr/issues
