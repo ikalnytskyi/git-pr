@@ -33,11 +33,19 @@ def main(args=sys.argv[1:]):
         '-b', '--branch',
         help='create a branch if passed')
 
+    parser.add_argument(
+        '-m', '--merge', action='store_true',
+        help='fetch merge commit if passed')
+
     arguments = parser.parse_args(args)
 
     try:
         pr = PullRequest(arguments.repository)
-        pr.get(arguments.pull_request, arguments.branch)
+        pr.get(
+            arguments.pull_request,
+            arguments.branch,
+            arguments.merge)
+
     except subprocess.CalledProcessError:
         # do nothing, just because that mostly means we do have an error
         # from git binary on stderr and it makes no sense to continue or

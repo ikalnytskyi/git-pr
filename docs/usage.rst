@@ -70,3 +70,20 @@ argument with a branch name:
 
 When it's done, the ``pr/42`` local branch is created with content of the
 pull request with ID=42.
+
+
+Fetch Merge Commit
+==================
+
+Each pull request produces two refs:
+
+  * one, that points to submitted pull request as its author submitted it;
+  * one, that points to a merge commit of a pull request and a branch it's
+    submitted to;
+
+By default, ``git-pr`` fetches the first one. If you want to fetch the second
+one, you've got to pass either ``-m`` or  ``--merge`` argument:
+
+.. code:: bash
+
+    $ git pr 42 --merge

@@ -22,16 +22,22 @@ class TestCLI(unittest.TestCase):
         main(['42'])
 
         PullRequest.assert_called_once_with('origin')
-        PullRequest('origin').get.assert_called_once_with(42, None)
+        PullRequest('origin').get.assert_called_once_with(42, None, False)
 
     def test_two_arguments(self, PullRequest):
         main(['github', '42'])
 
         PullRequest.assert_called_once_with('github')
-        PullRequest('github').get.assert_called_once_with(42, None)
+        PullRequest('github').get.assert_called_once_with(42, None, False)
 
     def test_branch_argument(self, PullRequest):
         main(['42', '-b', 'pr/42'])
 
         PullRequest.assert_called_once_with('origin')
-        PullRequest('origin').get.assert_called_once_with(42, 'pr/42')
+        PullRequest('origin').get.assert_called_once_with(42, 'pr/42', False)
+
+    def test_merge_commit_argument(self, PullRequest):
+        main(['42', '-m'])
+
+        PullRequest.assert_called_once_with('origin')
+        PullRequest('origin').get.assert_called_once_with(42, None, True)

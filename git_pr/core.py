@@ -18,8 +18,10 @@ class PullRequest(object):
     def __init__(self, repository):
         self._repository = repository
 
-    def get(self, pr, branch=None):
-        refspec = 'pull/{0}/head'.format(pr)
+    def get(self, pr, branch=None, merge=False):
+        pointer = 'head' if not merge else 'merge'
+        refspec = 'refs/pull/{0}/{1}'.format(pr, pointer)
+
         if branch is not None:
             refspec = '{0}:{1}'.format(refspec, branch)
         subprocess.check_call(['git', 'fetch', self._repository, refspec])

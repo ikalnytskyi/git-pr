@@ -9,6 +9,8 @@ Here you can see the list of changes between each git-pr release.
 ==================
 
 - Drop Python 3.2 support simply because it's dead (reached end of life).
+- New argument: ``-m``, ``--merge``. The flag is used to fetch a merge commit
+  of a given pull request and a branch the pull request is submitted to.
 
 
 0.1.0 (2015-10-17)
