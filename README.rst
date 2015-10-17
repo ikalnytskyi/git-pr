@@ -2,6 +2,15 @@
  git-pr
 ========
 
+.. image:: https://img.shields.io/pypi/v/git-pr.svg
+   :target: https://pypi.python.org/pypi/git-pr
+
+.. image:: https://img.shields.io/pypi/l/git-pr.svg
+   :target: https://pypi.python.org/pypi/git-pr
+
+.. image:: https://travis-ci.org/ikalnitsky/git-pr.svg?branch=master
+   :target: https://travis-ci.org/ikalnitsky/git-pr
+
 A git command for fetching GitHub's pull requests to local copy.
 
 .. code:: bash
