@@ -33,14 +33,3 @@ A universal installation method that works on Linux, OS X and even Windows.
 .. code:: bash
 
     $ [sudo] pip install git-pr
-
-
-Install via Homebrew
-====================
-
-Homebrew is a popular package manager for OS X, and should be a preferable
-installation way there.
-
-.. code:: bash
-
-    $ brew install git-pr
