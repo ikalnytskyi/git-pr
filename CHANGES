@@ -5,7 +5,7 @@
 Here you can see the list of changes between each git-pr release.
 
 
-0.2.0 (unreleased)
+0.2.0 (2017-03-19)
 ==================
 
 - Drop Python 3.2 support simply because it's dead (reached end of life).
