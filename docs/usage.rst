@@ -87,3 +87,15 @@ one, you've got to pass either ``-m`` or  ``--merge`` argument:
 .. code:: bash
 
     $ git pr 42 --merge
+
+
+Fetch Without Checkout
+======================
+
+By default, when a pull request is fetched, ``git-pr`` automatically checkouts
+to the fetched copy. It's not something you always want, so if you need to
+turn it off just pass either ``-C`` or ``--no-checkout`` argument:
+
+.. code:: bash
+
+    $ git pr 42 --no-checkout

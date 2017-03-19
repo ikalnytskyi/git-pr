@@ -37,6 +37,10 @@ def main(args=sys.argv[1:]):
         '-m', '--merge', action='store_true',
         help='fetch merge commit if passed')
 
+    parser.add_argument(
+        '-C', '--no-checkout', action='store_true',
+        help='do not auto switch to fetched pull request ')
+
     arguments = parser.parse_args(args)
 
     try:
@@ -44,7 +48,8 @@ def main(args=sys.argv[1:]):
         pr.get(
             arguments.pull_request,
             arguments.branch,
-            arguments.merge)
+            arguments.merge,
+            arguments.no_checkout)
 
     except subprocess.CalledProcessError:
         # do nothing, just because that mostly means we do have an error

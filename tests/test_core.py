@@ -52,3 +52,17 @@ class TestPullRequest(unittest.TestCase):
             mock.call(['git', 'fetch', 'repo', 'refs/pull/42/merge:pr/42']),
             mock.call(['git', 'checkout', 'pr/42']),
         ], sp_call.call_args_list)
+
+    def test_get_no_checkout(self, sp_call):
+        self.pr.get(42, no_checkout=True)
+
+        self.assertEqual([
+            mock.call(['git', 'fetch', 'repo', 'refs/pull/42/head']),
+        ], sp_call.call_args_list)
+
+    def test_get_create_branch_and_no_checkout(self, sp_call):
+        self.pr.get(42, 'pr/42', no_checkout=True)
+
+        self.assertEqual([
+            mock.call(['git', 'fetch', 'repo', 'refs/pull/42/head:pr/42']),
+        ], sp_call.call_args_list)
