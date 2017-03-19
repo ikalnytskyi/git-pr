@@ -17,7 +17,7 @@ from git_pr import __version__ as gitpr_version
 
 # project settings
 project = 'git-pr'
-copyright = '2015, Igor Kalnitsky'
+copyright = '2015, Ihor Kalnytskyi'
 release = gitpr_version
 version = re.sub('[^0-9.]', '', release)
 

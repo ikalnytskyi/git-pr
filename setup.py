@@ -26,11 +26,11 @@ setup(
     description="Tool to fetch GitHub's pull requests",
     long_description=long_description,
     license=license,
-    url='http://github.com/ikalnitsky/git-pr/',
+    url='http://github.com/ikalnytskyi/git-pr/',
     keywords='git github pull-request',
 
-    author='Igor Kalnitsky',
-    author_email='igor@kalnitsky.org',
+    author='Ihor Kalnytskyi',
+    author_email='ihor@kalnytskyi.com',
 
     packages=find_packages(exclude=['tests*']),
     test_suite='tests',

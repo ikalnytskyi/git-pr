@@ -6,7 +6,7 @@
     The module contains a core stuff that's used by CLI to manage
     GitHub's pull requests.
 
-    :copyright: (c) 2015 by Igor Kalnitsky
+    :copyright: (c) 2015 by Ihor Kalnytskyi
     :license: MIT, see LICENSE for details
 """
 
