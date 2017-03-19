@@ -6,9 +6,6 @@ import os
 from io import open
 from setuptools import setup, find_packages
 
-from git_pr import __version__ as version
-from git_pr import __license__ as license
-
 
 here = os.path.dirname(__file__)
 
@@ -21,41 +18,35 @@ mansection = os.path.basename(manpage).split('.')[1]
 
 setup(
     name='git-pr',
-    version=version,
-
-    description="Tool to fetch GitHub's pull requests",
+    description='Tool to fetch GitHub pull requests.',
     long_description=long_description,
-    license=license,
+    license='MIT',
     url='http://github.com/ikalnytskyi/git-pr/',
     keywords='git github pull-request',
-
     author='Ihor Kalnytskyi',
     author_email='ihor@kalnytskyi.com',
-
-    packages=find_packages(exclude=['tests*']),
+    packages=find_packages(exclude=['docs', 'tests*']),
     test_suite='tests',
-
+    use_scm_version=True,
+    setup_requires=[
+        'setuptools_scm >= 1.15',
+    ],
     entry_points={
         'console_scripts': [
             'git-pr = git_pr.__main__:main',
         ],
     },
-
     data_files=[
         (os.path.join('share', 'man', 'man' + mansection), [manpage]),
     ],
-
     classifiers=[
         'Environment :: Console',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
-
         'Topic :: Terminals',
         'Topic :: Software Development',
-
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',

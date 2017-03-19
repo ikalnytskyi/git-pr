@@ -9,16 +9,13 @@ import re
 import os
 import sys
 
-
-# add parent dir to PYTHONPATH for allowing import project's version
-sys.path.append(os.path.abspath(os.pardir))
-from git_pr import __version__ as gitpr_version
+import pkg_resources
 
 
 # project settings
 project = 'git-pr'
 copyright = '2015, Ihor Kalnytskyi'
-release = gitpr_version
+release = pkg_resources.get_distribution('git-pr').version
 version = re.sub('[^0-9.]', '', release)
 
 # sphinx settings

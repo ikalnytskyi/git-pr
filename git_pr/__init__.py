@@ -8,6 +8,3 @@
     :copyright: (c) 2015 by Ihor Kalnytskyi
     :license: MIT, see LICENSE for details
 """
-
-__version__ = '0.2.0'
-__license__ = 'MIT'
